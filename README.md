@@ -38,13 +38,13 @@ Build a function,that will take in an input from a user then another input from 
 1. User1 input of rock, paper, or scissors.
 1. User2 input of rock, paper, or scissors.
 1. Compare User1 input to User2 input.
-1. If User1 input is 'rock' and User2 input is 'scissor', User1 wins.
+1. If User1 input is 'rock' and User2 input is 'scissor', User1 wins. -
 1. If User1 input is 'rock' and User2 input is 'paper', User2 wins.
 1. If User1 input is 'rock' and User2 input is 'rock', it's a tie.
-1. If User1 input is 'paper' and User2 input is 'rock', User1 wins.
+1. If User1 input is 'paper' and User2 input is 'rock', User1 wins. -
 1. If User1 input is 'paper' and User2 input is 'scissors', User2 wins.
 1. If User1 input is 'paper' and User2 input is 'paper', it's a tie.
-1. If User1 input is 'scissors' and User2 input is 'paper', User1 wins.
+1. If User1 input is 'scissors' and User2 input is 'paper', User1 wins. -
 1. If User1 input is 'scissors' and User2 input is 'rock', User2 wins.
 1. If User1 input is 'scissors' and User2 input is 'scissors', it's a tie.
 
