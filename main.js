@@ -19,9 +19,6 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
-  // if(hand1 !== "rock" || hand1 !== "paper" || hand1 !== "scissors" || hand2 !== "rock" || hand2 !== "paper" || hand2 !== "scissors") {
-  //   return "NOT ROCK PAPER OR SCISSORS!"
-  // }
 
   if(hand1 === hand2) {
     return "It's a tie!"
@@ -31,11 +28,17 @@ const rockPaperScissors = (hand1, hand2) => {
     return "Hand one wins!"
   }
 
-  else {
+  else if ((hand2 === "rock" && hand1 === "scissors") || (hand2 === "paper" && hand1 === "rock") || (hand2 === "scissors" && hand1 === "paper")){
     return "Hand two wins!"
   }
 
+  else {
+    return "NOT ROCK PAPER OR SCISSORS!"
+  }
+
 }
+
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
@@ -70,6 +73,11 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
+    });
+    it('should check to see if anything other than rock paper or scissors was inputted', () => {
+      assert.equal(rockPaperScissors('dynamite', ' paper '), "NOT ROCK PAPER OR SCISSORS!");
+      assert.equal(rockPaperScissors('Paper', 'shotgun'), "NOT ROCK PAPER OR SCISSORS!");
+      assert.equal(rockPaperScissors('blizzard ', 'sCiSsOrs'), "NOT ROCK PAPER OR SCISSORS!");
     });
   });
 } else {
