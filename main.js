@@ -14,6 +14,8 @@ const rl = readline.createInterface({
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
 
+  
+
   hand1 = hand1.toLowerCase().trim()
   hand2 = hand2.toLowerCase().trim()
   // Write code here

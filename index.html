@@ -1,15 +1,58 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
-  </body>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<section class="game">
+
+    <div class="score">
+        <div class="player-score">
+        
+            <h2>Player</h2>
+            <p>0</p>
+        </div>
+        <div class="player2-score">
+            <h2>Computer</h1>
+            <p>0</p>
+
+        </div>
+    </div>
+
+        <div class="intro">
+            <h1>Rock Paper Scissors</h1>
+            <button>Let's Play</button>
+        </div>
+
+        <div class="match fadeOut">
+            <h2 class="winner">Choose an option</h2>
+            <div class="hands">
+                <img class="player-hand" src="assets/rock.png" alt="">
+                <img class="computer-hand" src="assets/rock.png" alt="">
+
+
+            </div>
+
+            <div class="options">
+
+              <div><textarea id="hand1"></textarea></div>
+              <button id="play">PLAY</button>
+            </div>
+        </div>
+
+
+
+</section>
+
+
+
+
+
+    <script src="main2.js"></script>
+</body>
 </html>
