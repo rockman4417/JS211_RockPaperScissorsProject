@@ -19,10 +19,10 @@ const game = () => {
             match.classList.remove('.fadeOut')
         });
     };
-  
+
     //play the match
     const playMatch = () => {
-        const options = document.getElementById("play")
+        const options = document.querySelectorAll('.options button');
         const playerHand = document.querySelector('.player-hand');
         const computerHand = document.querySelector('.computer-hand');
         const hands = document.querySelectorAll('.hands img');
@@ -37,39 +37,9 @@ const game = () => {
         //computer options
         const computerOptions = ['rock', 'paper', 'scissors'];
 
-        
+        options.forEach(option => {
 
-            options.addEventListener('keyup', function (e) {
-            console.log("a key was pressed!")
-            if (e.key === 'Enter') {
-              // code for enter
-              //computer choice
-              const computerNumber = Math.floor(Math.random() * 3);
-              const computerChoice = computerOptions[computerNumber];
-              winner.textContent = 'Rock Paper Scissors!';
-              
-              setTimeout(() => {
-                  //here is where we call compareHands
-              
-              
-
-              //update images
-              playerHand.src = `./assets/${document.getElementById("hand1").value.toLowerCase().trim()}.png`;
-              computerHand.src = `./assets/${computerChoice}.png`;
-              compareHands(this.textContent, computerChoice);
-              }, 2000)
-
-
-              //Animation
-              computerHand.src = `./assets/rock.png`;
-              playerHand.src = `./assets/rock.png`;
-              playerHand.style.animation = 'shakePlayer 2s ease';
-              computerHand.style.animation = 'shakeComputer 2s ease';
-              winner.style.animation = 'shakeComputer 2s ease';
-            }
-            });
-
-            options.addEventListener('click', function() {
+            option.addEventListener('click', function() {
 
                 //computer choice
                 const computerNumber = Math.floor(Math.random() * 3);
@@ -82,7 +52,7 @@ const game = () => {
                 
 
                 //update images
-                playerHand.src = `./assets/${document.getElementById("hand1").value.toLowerCase().trim()}.png`;
+                playerHand.src = `./assets/${this.textContent}.png`;
                 computerHand.src = `./assets/${computerChoice}.png`;
                 compareHands(this.textContent, computerChoice);
                 }, 2000)
@@ -98,9 +68,9 @@ const game = () => {
             });
 
     
-    };
+        });
 
-    
+    }
 
 
     const updateScore = () => {
@@ -114,7 +84,7 @@ const game = () => {
 
     const compareHands = (playerChoice, computerChoice) => {
 
-        playerChoice = document.getElementById("hand1").value.toLowerCase().trim();
+        
         //checking for a tie
         if(playerChoice === computerChoice) {
             winner.textContent = 'It is a tie!';
@@ -176,19 +146,14 @@ const game = () => {
                 return;
             };
         };
-        
-        winner.textContent = 'NOT ROCK PAPER OR SCISSORS!';
-        return;
-
-
     }
-  
+
 ///call all the inner functions
 startGame();
 playMatch();
-}
 
+    
 
-
+};
 
 game();
